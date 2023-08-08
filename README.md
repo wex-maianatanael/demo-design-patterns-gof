@@ -2,6 +2,7 @@
 
 # demo-design-patterns-gof
 This repo creates some samples to show how to implement the design patterns from GoF (Gang of Four).
+Check the [wiki](https://github.com/wex-maianatanael/demo-design-patterns-gof/wiki) to get more details.
 
 # Patterns
 
