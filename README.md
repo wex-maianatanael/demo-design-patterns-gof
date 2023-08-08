@@ -1,3 +1,5 @@
+🚧 Under Construction...
+
 # demo-design-patterns-gof
 This repo creates some samples to show how to implement the design patterns from GoF (Gang of Four).
 
@@ -33,5 +35,3 @@ This repo creates some samples to show how to implement the design patterns from
 - Strategy 🚧
 - Template Method 🚧
 - Visitor 🚧
-
-🚧 Under Construction...
