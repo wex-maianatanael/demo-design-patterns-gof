@@ -1,8 +1,9 @@
-﻿using Demo.Entities.Enums;
+﻿using Demo.Entities;
+using Demo.Entities.Enums;
 
 namespace Demo.Builder.Builders.Contracts
 {
-    public interface ISavingsAccountBuilder
+    public interface ISavingsAccountBuilder : IBaseAccountBuilder<SavingsAccount>
     {
         void SetWithdrawLimit(int withdrawLimit);
         void SetPenaltyFee(decimal penaltyFee);

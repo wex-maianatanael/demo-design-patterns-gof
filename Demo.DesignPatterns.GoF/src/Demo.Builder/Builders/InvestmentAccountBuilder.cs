@@ -6,8 +6,6 @@ namespace Demo.Builder.Builders
 {
     public class InvestmentAccountBuilder : BaseAccountBuilder<InvestmentAccount>, IInvestmentAccountBuilder
     {
-        private InvestmentAccount _account = new();
-
         public void SetCapitalGains(decimal capitalGains)
         {
             this._account.CapitalGains = capitalGains;

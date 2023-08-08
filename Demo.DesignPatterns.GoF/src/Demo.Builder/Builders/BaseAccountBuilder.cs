@@ -3,10 +3,10 @@ using Demo.Entities;
 
 namespace Demo.Builder.Builders
 {
-    public abstract class BaseAccountBuilder<TEntity> : IBaseAccountBuilder<TEntity>
+    public class BaseAccountBuilder<TEntity> : IBaseAccountBuilder<TEntity>
         where TEntity : BaseAccount, new()
     {
-        private TEntity _account = new();
+        protected TEntity _account = new();
 
         public void Reset()
         {

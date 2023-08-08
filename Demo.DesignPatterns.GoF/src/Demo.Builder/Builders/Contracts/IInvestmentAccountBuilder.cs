@@ -1,8 +1,9 @@
-﻿using Demo.Entities.Enums;
+﻿using Demo.Entities;
+using Demo.Entities.Enums;
 
 namespace Demo.Builder.Builders.Contracts
 {
-    public interface IInvestmentAccountBuilder
+    public interface IInvestmentAccountBuilder : IBaseAccountBuilder<InvestmentAccount>
     {
         void SetStrategy(InvestmentStrategyType strategy);
         void SetToleranceRisk(ToleranceRiskType toleranceRisk);

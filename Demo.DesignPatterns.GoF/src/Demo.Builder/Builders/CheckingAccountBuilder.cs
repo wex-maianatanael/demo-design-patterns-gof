@@ -5,8 +5,6 @@ namespace Demo.Builder.Builders
 {
     public class CheckingAccountBuilder : BaseAccountBuilder<CheckingAccount>, ICheckingAccountBuilder
     {
-        private CheckingAccount _account = new();
-
         public void SetMonthlyFee(decimal monthlyFee)
         {
             this._account.MonthlyFee = monthlyFee;

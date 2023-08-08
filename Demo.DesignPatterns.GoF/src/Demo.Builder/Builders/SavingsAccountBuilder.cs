@@ -6,8 +6,6 @@ namespace Demo.Builder.Builders
 {
     public class SavingsAccountBuilder : BaseAccountBuilder<SavingsAccount>, ISavingsAccountBuilder
     {
-        private SavingsAccount _account = new();
-
         public void SetCompoundingFrequency(CompoundingFrequencyType compoundingFrequency)
         {
             this._account.CompoundingFrequency = compoundingFrequency;

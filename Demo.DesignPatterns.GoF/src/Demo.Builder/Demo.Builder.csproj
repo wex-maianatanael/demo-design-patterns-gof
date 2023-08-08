@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Demo.Entities\Demo.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Directors\" />
-  </ItemGroup>
-
 </Project>

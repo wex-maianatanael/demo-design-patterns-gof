@@ -6,8 +6,6 @@ namespace Demo.Builder.Builders
 {
     public class StudentAccountBuilder : BaseAccountBuilder<StudentAccount>, IStudentAccountBuilder
     {
-        private StudentAccount _account = new();
-
         public void SetATMLimit(decimal atMLimit)
         {
             this._account.ATMLimit = atMLimit;
