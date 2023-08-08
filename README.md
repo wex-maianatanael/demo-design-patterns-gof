@@ -8,6 +8,7 @@ This repo creates some samples to show how to implement the design patterns from
 ## Creational
 
 - Builder ✔️
+  - ℹ️ The Directors are not implemented yet (still working on it)
 - Abstract Factory 🚧
 - Factory Method 🚧
 - Prototype 🚧
