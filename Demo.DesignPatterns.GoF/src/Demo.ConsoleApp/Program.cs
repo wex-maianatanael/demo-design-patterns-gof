@@ -19,6 +19,10 @@ var builder = Host.CreateDefaultBuilder(args)
 
 using var host = builder.Build();
 
+#region ' Creational Patterns '
+
+#region ' Builder '
+
 #region ' Using Builder '
 
 var checkingAccountBuilderService = host.Services.GetRequiredService<ICheckingAccountBuilder>();
@@ -65,6 +69,10 @@ var checkingAccountTranslated = mapper.Map<CheckingAccount>(model);
 var checkingAccount2 = directorAccountBuilderService.BuildCheckingAccount(checkingAccountTranslated);
 
 Console.WriteLine(checkingAccount2.ToString());
+
+#endregion
+
+#endregion
 
 #endregion
 
