@@ -1,2 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Builder.Builders.BaseAccountBuilder&lt;TEntity&gt;" Collapsed="true">
+    <Position X="9.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAhAAAARAAAAAAgAAAAAAAAABAAAAAAAEAAAAA=</HashCode>
+      <FileName>Builders\BaseAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Builder.Builders.CheckingAccountBuilder" Collapsed="true">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAkAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Builders\CheckingAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Builder.Builders.InvestmentAccountBuilder" Collapsed="true">
+    <Position X="12.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAEAA=</HashCode>
+      <FileName>Builders\InvestmentAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Builder.Builders.SavingsAccountBuilder" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAIAAAAAAAEAAAAAAAAEABAAA=</HashCode>
+      <FileName>Builders\SavingsAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Builder.Builders.StudentAccountBuilder" Collapsed="true">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAIAAAABAAABAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Builders\StudentAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Builder.Directors.AccountDirector&lt;TEntity&gt;" Collapsed="true">
+    <Position X="15.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAAAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAACAGAA=</HashCode>
+      <FileName>Directors\AccountDirector.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Demo.Builder.Builders.Contracts.IBaseAccountBuilder&lt;TEntity&gt;" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAhAAAABAAAAAAgAAAAAAAAABAAAAAAAEAAAAA=</HashCode>
+      <FileName>Builders\Contracts\IBaseAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Demo.Builder.Builders.Contracts.ICheckingAccountBuilder" Collapsed="true">
+    <Position X="8.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAkAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Builders\Contracts\ICheckingAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Demo.Builder.Builders.Contracts.IInvestmentAccountBuilder" Collapsed="true">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAACAAACAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAEAA=</HashCode>
+      <FileName>Builders\Contracts\IInvestmentAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Demo.Builder.Builders.Contracts.ISavingsAccountBuilder" Collapsed="true">
+    <Position X="12.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAIAAAAAAAEAAAAAAAAEABAAA=</HashCode>
+      <FileName>Builders\Contracts\ISavingsAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Demo.Builder.Builders.Contracts.IStudentAccountBuilder" Collapsed="true">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAIAAAABAAABAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Builders\Contracts\IStudentAccountBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Demo.Builder.Directors.Contracts.IAccountDirector&lt;TEntity&gt;" Collapsed="true">
+    <Position X="15.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAgAAAAAACAEAA=</HashCode>
+      <FileName>Directors\Contracts\IAccountDirector.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

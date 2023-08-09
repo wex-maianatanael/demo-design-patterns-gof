@@ -1,5 +1,4 @@
-﻿using Demo.Builder.Builders;
-using Demo.Builder.Builders.Contracts;
+﻿using Demo.Builder.Builders.Contracts;
 using Demo.Builder.Directors.Contracts;
 using Demo.Entities;
 
@@ -26,21 +25,22 @@ namespace Demo.Builder.Directors
 
         public CheckingAccount BuildCheckingAccount(TEntity account) // todo: when receiving a dto or viewmodel here, we could use automapper to handle the obj.
         {
-            if (_checkingAccountBuilder is CheckingAccountBuilder checkingAccountBuilder && account is CheckingAccount checkingAccount) 
+            if (account is CheckingAccount checkingAccount) 
             {
-                checkingAccountBuilder.Reset();
-                checkingAccountBuilder.SetAccountNumber(checkingAccount.Number);
-                checkingAccountBuilder.SetAccountBalance(checkingAccount.Balance);
-                checkingAccountBuilder.SetOpenDate(checkingAccount.OpenedDate);
-                checkingAccountBuilder.SetIsActive(checkingAccount.IsActive);
-                checkingAccountBuilder.SetMonthlyFee(checkingAccount.MonthlyFee);
-                checkingAccountBuilder.SetMonthlyFreeTransactions(checkingAccount.MonthlyFreeTransactions);
-                checkingAccountBuilder.SetOverdraftLimit(checkingAccount.OverdraftLimit);
-                checkingAccountBuilder.SetTransactionFee(checkingAccount.TransactionFee);
-                return checkingAccountBuilder.GetAccount();
+                _checkingAccountBuilder.Reset();
+                _checkingAccountBuilder.SetAccountNumber(checkingAccount.Number);
+                _checkingAccountBuilder.SetAccountBalance(checkingAccount.Balance);
+                _checkingAccountBuilder.SetOpenDate(checkingAccount.OpenedDate);
+                _checkingAccountBuilder.SetIsActive(checkingAccount.IsActive);
+                _checkingAccountBuilder.SetMonthlyFee(checkingAccount.MonthlyFee);
+                _checkingAccountBuilder.SetMonthlyFreeTransactions(checkingAccount.MonthlyFreeTransactions);
+                _checkingAccountBuilder.SetOverdraftLimit(checkingAccount.OverdraftLimit);
+                _checkingAccountBuilder.SetTransactionFee(checkingAccount.TransactionFee);
+
+                return _checkingAccountBuilder.GetAccount();
             }
 
-            throw new InvalidOperationException($"The current builder ({_checkingAccountBuilder.GetType().Name}) doesn't support CheckingAccount construction.");
+            throw new InvalidOperationException($"The current account ({account.GetType().Name}) doesn't support CheckingAccount construction.");
         }
 
         public void BuildInvestmentAccount(TEntity account)

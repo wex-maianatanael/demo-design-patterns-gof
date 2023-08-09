@@ -1,9 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Demo.Builder.Builders;
+using AutoMapper;
 using Demo.Builder.Builders.Contracts;
-using Demo.Builder.Directors;
 using Demo.Builder.Directors.Contracts;
+using Demo.ConsoleApp.Configuration;
+using Demo.ConsoleApp.Mapping;
+using Demo.ConsoleApp.ViewModels;
 using Demo.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,15 +13,8 @@ using Microsoft.Extensions.Hosting;
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddTransient<ICheckingAccountBuilder, CheckingAccountBuilder>();
-        services.AddTransient<IInvestmentAccountBuilder, InvestmentAccountBuilder>(); // todo: not tested
-        services.AddTransient<ISavingsAccountBuilder, SavingsAccountBuilder>(); // todo: not tested
-        services.AddTransient<IStudentAccountBuilder, StudentAccountBuilder>(); // todo: not tested
-
-        services.AddTransient<IAccountDirector<CheckingAccount>, AccountDirector<CheckingAccount>>(); // working
-        services.AddTransient<IAccountDirector<InvestmentAccount>, AccountDirector<InvestmentAccount>>(); // todo: not implemented
-        services.AddTransient<IAccountDirector<SavingsAccount>, AccountDirector<SavingsAccount>>(); // todo: not implemented
-        services.AddTransient<IAccountDirector<StudentAccount>, AccountDirector<StudentAccount>>(); // todo: not implemented
+        services.AddDependencyConfig();
+        services.AddAutoMapper(typeof(ObjectsMappingProfile));
     });
 
 using var host = builder.Build();
@@ -51,9 +46,9 @@ checkingAccountBuilderService.Reset();
 #region ' Using Director '
 
 var directorAccountBuilderService = host.Services.GetRequiredService<IAccountDirector<CheckingAccount>>();
+var mapper = host.Services.GetRequiredService<IMapper>();
 
-// todo: depending on the scenario, it could be a view model or dto class.
-var tempCheckingAccount = new CheckingAccount()
+var model = new CheckingAccountViewModel()
 {
     Balance = 1200,
     IsActive = true,
@@ -65,7 +60,9 @@ var tempCheckingAccount = new CheckingAccount()
     TransactionFee = 2
 };
 
-var checkingAccount2 = directorAccountBuilderService.BuildCheckingAccount(tempCheckingAccount);
+var checkingAccountTranslated = mapper.Map<CheckingAccount>(model);
+
+var checkingAccount2 = directorAccountBuilderService.BuildCheckingAccount(checkingAccountTranslated);
 
 Console.WriteLine(checkingAccount2.ToString());
 

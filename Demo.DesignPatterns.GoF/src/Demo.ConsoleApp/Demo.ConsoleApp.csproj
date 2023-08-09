@@ -8,16 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Demo.Builder\Demo.Builder.csproj" />
     <ProjectReference Include="..\Demo.Entities\Demo.Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Configuration\" />
   </ItemGroup>
 
 </Project>
