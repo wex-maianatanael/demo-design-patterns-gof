@@ -2,13 +2,14 @@
 
 # demo-design-patterns-gof
 This repo creates some samples to show how to implement the design patterns from GoF (Gang of Four).
+Check the [wiki](https://github.com/wex-maianatanael/demo-design-patterns-gof/wiki) to get more details.
 
 # Patterns
 
 ## Creational
 
 - Builder ✔️
-  - ℹ️ The Directors are not implemented yet (still working on it)
+  - ℹ️ The Director is partially implemented (still working on it)
 - Abstract Factory 🚧
 - Factory Method 🚧
 - Prototype 🚧
