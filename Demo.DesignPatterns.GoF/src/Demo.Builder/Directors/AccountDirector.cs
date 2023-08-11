@@ -28,8 +28,6 @@ namespace Demo.Builder.Directors
             _mapper = mapper;
         }
 
-        // todo: add method (generic) to set base account data that will be called by the other methods in this director
-
         public CheckingAccount BuildCheckingAccount(TDto account)
         {
             if (account is not CheckingAccountDto)
