@@ -9,7 +9,6 @@ Check the [wiki](https://github.com/wex-maianatanael/demo-design-patterns-gof/wi
 ## Creational
 
 - Builder ✔️
-  - ℹ️ The Director is partially implemented (still working on it)
 - Abstract Factory 🚧
 - Factory Method 🚧
 - Prototype 🚧
