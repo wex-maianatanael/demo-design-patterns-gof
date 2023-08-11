@@ -1,8 +1,8 @@
-﻿using Demo.Builder.Builders.Contracts;
-using Demo.Builder.Builders;
-using Demo.Builder.Directors.Contracts;
+﻿using Demo.Builder.Builders;
+using Demo.Builder.Builders.Contracts;
 using Demo.Builder.Directors;
-using Demo.Entities;
+using Demo.Builder.Directors.Contracts;
+using Demo.Builder.DTOs;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Demo.ConsoleApp.Configuration
@@ -12,14 +12,14 @@ namespace Demo.ConsoleApp.Configuration
         public static IServiceCollection AddDependencyConfig(this IServiceCollection services)
         {
             services.AddTransient<ICheckingAccountBuilder, CheckingAccountBuilder>();
-            services.AddTransient<IInvestmentAccountBuilder, InvestmentAccountBuilder>(); // todo: not tested
+            services.AddTransient<IInvestmentAccountBuilder, InvestmentAccountBuilder>();
             services.AddTransient<ISavingsAccountBuilder, SavingsAccountBuilder>(); // todo: not tested
             services.AddTransient<IStudentAccountBuilder, StudentAccountBuilder>(); // todo: not tested
 
-            services.AddTransient<IAccountDirector<CheckingAccount>, AccountDirector<CheckingAccount>>(); // working
-            services.AddTransient<IAccountDirector<InvestmentAccount>, AccountDirector<InvestmentAccount>>(); // todo: not implemented
-            services.AddTransient<IAccountDirector<SavingsAccount>, AccountDirector<SavingsAccount>>(); // todo: not implemented
-            services.AddTransient<IAccountDirector<StudentAccount>, AccountDirector<StudentAccount>>(); // todo: not implemented
+            services.AddTransient<IAccountDirector<CheckingAccountDto>, AccountDirector<CheckingAccountDto>>();
+            services.AddTransient<IAccountDirector<InvestmentAccountDto>, AccountDirector<InvestmentAccountDto>>();
+            services.AddTransient<IAccountDirector<SavingsAccountDto>, AccountDirector<SavingsAccountDto>>();
+            services.AddTransient<IAccountDirector<StudentAccountDto>, AccountDirector<StudentAccountDto>>();
 
             return services;
         }

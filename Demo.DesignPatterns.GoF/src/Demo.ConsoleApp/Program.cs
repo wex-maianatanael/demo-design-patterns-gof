@@ -3,10 +3,10 @@
 using AutoMapper;
 using Demo.Builder.Builders.Contracts;
 using Demo.Builder.Directors.Contracts;
+using Demo.Builder.DTOs;
 using Demo.ConsoleApp.Configuration;
 using Demo.ConsoleApp.Mapping;
 using Demo.ConsoleApp.ViewModels;
-using Demo.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -19,11 +19,13 @@ var builder = Host.CreateDefaultBuilder(args)
 
 using var host = builder.Build();
 
+var mapper = host.Services.GetRequiredService<IMapper>();
+
 #region ' Creational Patterns '
 
 #region ' Builder '
 
-#region ' Using Builder '
+#region ' Using Builder - Checking Account '
 
 var checkingAccountBuilderService = host.Services.GetRequiredService<ICheckingAccountBuilder>();
 
@@ -45,14 +47,13 @@ Console.WriteLine(checkingAccount1.ToString());
 
 checkingAccountBuilderService.Reset();
 
-#endregion
+#endregion ' Using Builder - Checking Account '
 
-#region ' Using Director '
+#region ' Using Director - Checking Account '
 
-var directorAccountBuilderService = host.Services.GetRequiredService<IAccountDirector<CheckingAccount>>();
-var mapper = host.Services.GetRequiredService<IMapper>();
+var directorCheckingAccountBuilderService = host.Services.GetRequiredService<IAccountDirector<CheckingAccountDto>>();
 
-var model = new CheckingAccountViewModel()
+var checkingAccountViewmModel = new CheckingAccountViewModel()
 {
     Balance = 1200,
     IsActive = true,
@@ -64,16 +65,68 @@ var model = new CheckingAccountViewModel()
     TransactionFee = 2
 };
 
-var checkingAccountTranslated = mapper.Map<CheckingAccount>(model);
+var checkingAccountDto = mapper.Map<CheckingAccountDto>(checkingAccountViewmModel);
 
-var checkingAccount2 = directorAccountBuilderService.BuildCheckingAccount(checkingAccountTranslated);
+var checkingAccount2 = directorCheckingAccountBuilderService.BuildCheckingAccount(checkingAccountDto);
 
 Console.WriteLine(checkingAccount2.ToString());
 
-#endregion
+#endregion ' Using Director - Checking Account '
 
-#endregion
+#region ' Using Builder - Investment Account '
 
-#endregion
+var investmentAccountBuilderService = host.Services.GetRequiredService<IInvestmentAccountBuilder>();
+
+// base account data
+investmentAccountBuilderService.SetAccountNumber(123);
+investmentAccountBuilderService.SetAccountBalance(100);
+investmentAccountBuilderService.SetIsActive(true);
+investmentAccountBuilderService.SetOpenDate(DateTimeOffset.UtcNow);
+
+// investment account data
+investmentAccountBuilderService.SetStrategy(Demo.Entities.Enums.InvestmentStrategyType.Moderate);
+investmentAccountBuilderService.SetToleranceRisk(Demo.Entities.Enums.ToleranceRiskType.Low);
+investmentAccountBuilderService.SetDividends(1000);
+investmentAccountBuilderService.SetManagementFee(10);
+investmentAccountBuilderService.SetInvestmentReturn(28);
+investmentAccountBuilderService.SetCapitalGains(10000);
+
+var investmentAccount1 = investmentAccountBuilderService.GetAccount();
+
+Console.WriteLine(investmentAccount1.ToString());
+
+investmentAccountBuilderService.Reset();
+
+#endregion ' Using Builder - Investment Account '
+
+#region ' Using Director - Investment Account '
+
+var directorInvestmentAccountBuilderService = host.Services.GetRequiredService<IAccountDirector<InvestmentAccountDto>>();
+
+var investmentAccountViewModel = new InvestmentAccountViewModel()
+{
+    Number = 333,
+    Balance = 1200,
+    OpenedDate = DateTimeOffset.UtcNow,
+    IsActive = true,
+    Strategy = Demo.Entities.Enums.InvestmentStrategyType.Moderate,
+    ToleranceRisk = Demo.Entities.Enums.ToleranceRiskType.Low,
+    Dividends = 1000,
+    ManagementFee = 10,
+    InvestmentReturn = 28,
+    CapitalGains = 1000
+};
+
+var investmentAccountDto = mapper.Map<InvestmentAccountDto>(investmentAccountViewModel);
+
+var investmentAccount2 = directorInvestmentAccountBuilderService.BuildInvestmentAccount(investmentAccountDto);
+
+Console.WriteLine(investmentAccount2.ToString());
+
+#endregion ' Using Director - Investment Account '
+
+#endregion ' Builder '
+
+#endregion ' Creational Patterns '
 
 Console.ReadKey();

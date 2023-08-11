@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Entities", "src\Demo.Entities\Demo.Entities.csproj", "{6AE52F23-E0B1-4176-97C7-54D36F918BAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Entities", "src\Demo.Entities\Demo.Entities.csproj", "{6AE52F23-E0B1-4176-97C7-54D36F918BAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Builder", "src\Demo.Builder\Demo.Builder.csproj", "{65C598F1-BEDD-479A-AD48-2B46D25B1E9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.Builder", "src\Demo.Builder\Demo.Builder.csproj", "{65C598F1-BEDD-479A-AD48-2B46D25B1E9A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_Creationals", "02_Creationals", "{A0FD0EE7-1FAE-4A5E-96FA-C481858CE054}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_Domain", "04_Domain", "{1EE315A0-9080-4210-BD12-84DCC93F0AE3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_Domain", "05_Domain", "{1EE315A0-9080-4210-BD12-84DCC93F0AE3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_App", "01_App", "{99F4B4F2-B63E-482D-916B-2BC654F7E0B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ConsoleApp", "src\Demo.ConsoleApp\Demo.ConsoleApp.csproj", "{D4DBC57C-46B5-4E3C-B597-C89DC633444C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo.ConsoleApp", "src\Demo.ConsoleApp\Demo.ConsoleApp.csproj", "{D4DBC57C-46B5-4E3C-B597-C89DC633444C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

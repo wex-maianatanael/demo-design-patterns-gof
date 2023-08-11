@@ -1,6 +1,6 @@
-﻿namespace Demo.ConsoleApp.ViewModels
+﻿namespace Demo.Builder.DTOs
 {
-    public class CheckingAccountViewModel
+    public class CheckingAccountDto
     {
         #region ' Base properties '
 
